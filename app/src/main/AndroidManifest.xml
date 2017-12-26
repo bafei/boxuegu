@@ -9,16 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name="cn.edu.gdmec.android.boxuegu.MainActivity" />
-        <activity android:name="cn.edu.gdmec.android.boxuegu.activity.SplashActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="cn.edu.gdmec.android.boxuegu.activity.RegisterActivity" />
-        <activity android:name="cn.edu.gdmec.android.boxuegu.activity.LoginActivity"></activity>
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.UserInfoActivity"></activity>
     </application>
 
 </manifest>
