@@ -44,8 +44,8 @@ public class RegisterActivity extends AppCompatActivity {
         rl_title_bar.setBackgroundColor(Color.TRANSPARENT);
         //从activity_register.xml获取对应的UI控件
         btn_register = (Button) findViewById(R.id.btn_register);
-        et_user_name = (EditText) findViewById(R.id.tv_user_name);
-        et_pwd = (EditText) findViewById(R.id.tv_pwd);
+        et_user_name = (EditText) findViewById(R.id.et_user_name);
+        et_pwd = (EditText) findViewById(R.id.et_pwd);
         et_pwd_again = (EditText) findViewById(R.id.tv_pwd_again);
         tv_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +74,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "用户名已经存在", Toast.LENGTH_SHORT).show();
                     return;
                 } else {
-                    Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
+
                     //保存用户信息
                     saveRegisterInfo(userName, pwd);
                     //注册成功后把用户名传给登录界面
@@ -82,6 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
                     data.putExtra("userName", userName);
                     setResult(RESULT_OK, data);
                     RegisterActivity.this.finish();
+                    Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
 
                 }
             }
