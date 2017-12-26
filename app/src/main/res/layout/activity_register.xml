@@ -16,6 +16,7 @@
         android:background="@drawable/default_icon"/>
     <EditText
         android:id="@+id/et_user_name"
+        android:inputType="text"
         android:layout_width="fill_parent"
         android:layout_height="48dp"
         android:background="@drawable/register_user_name_bg"
@@ -32,6 +33,7 @@
         android:textSize="14sp"/>
     <EditText
         android:id="@+id/et_pwd"
+        android:inputType="textPassword"
         android:layout_width="fill_parent"
         android:layout_height="48dp"
         android:background="@drawable/register_psw_bg"
@@ -47,6 +49,7 @@
         android:textSize="14sp"/>
     <EditText
         android:id="@+id/tv_pwd_again"
+        android:inputType="textPassword"
         android:layout_width="fill_parent"
         android:layout_height="48dp"
         android:background="@drawable/register_psw_again_bg"
