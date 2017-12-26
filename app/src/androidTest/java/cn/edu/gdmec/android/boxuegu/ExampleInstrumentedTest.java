@@ -1,4 +1,4 @@
-package cn.edu.gdme.android.boxuegu;
+package cn.edu.gdmec.android.boxuegu;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

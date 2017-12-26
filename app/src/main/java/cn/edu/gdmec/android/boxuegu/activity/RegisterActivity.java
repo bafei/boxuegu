@@ -1,9 +1,8 @@
-package cn.edu.gdme.android.boxuegu.activity;
+package cn.edu.gdmec.android.boxuegu.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.support.v4.text.TextUtilsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -14,10 +13,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import cn.edu.gdme.android.boxuegu.R;
-import cn.edu.gdme.android.boxuegu.utils.MD5Utils;
-
-import static cn.edu.gdme.android.boxuegu.R.id.btn_register;
+import cn.edu.gdmec.android.boxuegu.R;
+import cn.edu.gdmec.android.boxuegu.utils.MD5Utils;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -116,7 +113,7 @@ public class RegisterActivity extends AppCompatActivity {
     //获取控件中的字符串
     private void getEditString() {
         userName = et_user_name.getText().toString().trim();
-        pwd = et_pwd.getText().toString().trim();
+        pwd = et_pwd.getText().toString().trim().trim();
         pwdAgain = et_pwd_again.getText().toString().trim();
 
 

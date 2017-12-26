@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/register_bg"
-    tools:context="cn.edu.gdme.android.boxuegu.activity.LoginActivity">
+    tools:context="cn.edu.gdmec.android.boxuegu.activity.LoginActivity">
     <include layout="@layout/main_title_bar"/>
     <ImageView
         android:layout_marginTop="25dp"
