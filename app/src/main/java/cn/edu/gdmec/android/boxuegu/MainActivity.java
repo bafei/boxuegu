@@ -1,14 +1,18 @@
 package cn.edu.gdmec.android.boxuegu;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -170,6 +174,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mBottomLayout.getChildAt(i).setSelected(false); //设置为未选中，有什么用捏，我不知道
         }
     }
+    protected long exitTime; //上一次点击时间
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction()==KeyEvent.ACTION_DOWN){
+            if(System.currentTimeMillis() - exitTime >2000){
+                Toast.makeText(this, "再点击一次退出应用", Toast.LENGTH_SHORT).show();
+                exitTime = System.currentTimeMillis();
+            }else{
+                MainActivity.this.finish();
+                if(readLoginStatus()){
+                    clearLoginStatus();
+                }
+                System.exit(0);
+            }
+            return true; //清除返回按钮事件
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+    /*清除登录状态和登录名，自动填入登录名来源于登录页面的作用于注册的startActivityForResult方法，删除用户名暂时无实际作用，删除状态作用未知*/
+    private void clearLoginStatus() {
+        SharedPreferences sp = getSharedPreferences("loginInfo",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putBoolean("isLogin",false);   //第二个参数表设置
+        editor.putString("loginUserName","");
+        editor.commit();
+    }
 
-    
+    private boolean readLoginStatus() {
+        SharedPreferences sp = getSharedPreferences("loginInfo",MODE_PRIVATE);
+        boolean isLogin = sp.getBoolean("isLogin", false); //第二个参数表默认
+        return isLogin;
+    }
 }

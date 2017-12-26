@@ -114,7 +114,7 @@ public class RegisterActivity extends AppCompatActivity {
     //获取控件中的字符串
     private void getEditString() {
         userName = et_user_name.getText().toString().trim();
-        pwd = et_pwd.getText().toString().trim().trim();
+        pwd = et_pwd.getText().toString().trim();
         pwdAgain = et_pwd_again.getText().toString().trim();
 
 

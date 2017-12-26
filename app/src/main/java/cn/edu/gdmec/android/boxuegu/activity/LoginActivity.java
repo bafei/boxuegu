@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
-                startActivityForResult(intent,1); //1是请求码
+                startActivityForResult(intent,1); //1是请求码，当Activity结束时requestCode将归还在onActivityResult()中。以便确定返回的数据是从哪个Activity中返回
             }
         });
         //找回密码点击事件
@@ -115,6 +115,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @Override
+    /*
+    *  当startActivityForResult时重写，
+    * */
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(data!=null){
