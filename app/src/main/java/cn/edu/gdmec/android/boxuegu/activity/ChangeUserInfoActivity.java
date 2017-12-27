@@ -1,5 +1,6 @@
 package cn.edu.gdmec.android.boxuegu.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import cn.edu.gdmec.android.boxuegu.R;
 
@@ -56,6 +58,47 @@ public class ChangeUserInfoActivity extends AppCompatActivity {
             et_content.setSelection(content.length());
         }
         contentListener();
+        tv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ChangeUserInfoActivity.this.finish();
+            }
+        });
+        iv_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                et_content.setText("");
+            }
+        });
+        tv_save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent data = new Intent();
+                String etContent = et_content.getText().toString().trim();
+                switch (flag){
+                    case 1:
+                        if (!TextUtils.isEmpty(etContent)){
+                            data.putExtra("nickName",data);
+                            setResult(RESULT_OK,data);
+                            Toast.makeText(ChangeUserInfoActivity.this,"保存成功",Toast.LENGTH_SHORT).show();
+                            ChangeUserInfoActivity.this.finish();
+                        }else{
+                            Toast.makeText(ChangeUserInfoActivity.this,"昵称不能为空",Toast.LENGTH_SHORT).show();
+                        }
+                        break;
+                    case 2:
+                        if (!TextUtils.isEmpty(etContent)){
+                            data.putExtra("signature",data);
+                            setResult(RESULT_OK,data);
+                            Toast.makeText(ChangeUserInfoActivity.this,"保存成功",Toast.LENGTH_SHORT).show();
+                            ChangeUserInfoActivity.this.finish();
+                        }else{
+                            Toast.makeText(ChangeUserInfoActivity.this,"签名不能为空",Toast.LENGTH_SHORT).show();
+                        }
+                        break;
+                }
+            }
+        });
 
 
 
@@ -105,7 +148,7 @@ public class ChangeUserInfoActivity extends AppCompatActivity {
                     //签名类似处理
 
                     case  2:
-                        if(len>8){
+                        if(len>16){
                             int selEndIndex = Selection.getSelectionEnd(text);
                             String str = text.toString();
 

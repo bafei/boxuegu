@@ -92,7 +92,7 @@
                 android:layout_marginBottom="3dp"
                 android:gravity="center"
                 android:inputType="text"
-                android:text="课程"
+                android:text="我"
                 android:textColor="#666666"
                 android:textSize="14sp"/>
             <ImageView
