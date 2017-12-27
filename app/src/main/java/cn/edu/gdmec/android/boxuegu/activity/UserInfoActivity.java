@@ -77,7 +77,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         tv_main_title = (TextView) findViewById(R.id.tv_main_title);
         tv_main_title.setText("个人资料");
         rl_title_bar = (RelativeLayout) findViewById(R.id.title_bar);
-       // rl_title_bar.setBackgroundColor(Color.parseColor("#30B4FF0"));
+        rl_title_bar.setBackgroundColor(Color.parseColor("#30B4FF"));
 
         rl_userName = (RelativeLayout) findViewById(R.id.rl_account);
         tv_user_name = (TextView) findViewById(R.id.tv_user_name);
