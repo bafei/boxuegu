@@ -9,13 +9,12 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import cn.edu.gdmec.android.boxuegu.R;
 import cn.edu.gdmec.android.boxuegu.bean.Userbean;
-import cn.edu.gdmec.android.boxuegu.utils.AnalysitUtils;
+import cn.edu.gdmec.android.boxuegu.utils.AnalysisUtils;
 import cn.edu.gdmec.android.boxuegu.utils.DBUtils;
 
 public class UserInfoActivity extends AppCompatActivity implements View.OnClickListener {
@@ -43,7 +42,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info);
         //上一章的
-        spUserName = AnalysitUtils.readLoginUserName(this);
+        spUserName = AnalysisUtils.readLoginUserName(this);
         init();
         initDate();
         setListener();

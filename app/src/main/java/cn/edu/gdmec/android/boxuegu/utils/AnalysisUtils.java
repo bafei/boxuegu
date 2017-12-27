@@ -7,7 +7,8 @@ import android.content.SharedPreferences;
  * Created by student on 17/12/27.
  */
 
-public class AnalysitUtils {
+public class AnalysisUtils {
+    
     /*
     * 从sharedPreference中读取用户名
     * */

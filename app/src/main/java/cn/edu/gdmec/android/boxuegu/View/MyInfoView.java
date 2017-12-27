@@ -11,13 +11,12 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.TwoLineListItem;
 
 import cn.edu.gdmec.android.boxuegu.R;
 import cn.edu.gdmec.android.boxuegu.activity.LoginActivity;
 import cn.edu.gdmec.android.boxuegu.activity.SettingActivity;
 import cn.edu.gdmec.android.boxuegu.activity.UserInfoActivity;
-import cn.edu.gdmec.android.boxuegu.utils.AnalysitUtils;
+import cn.edu.gdmec.android.boxuegu.utils.AnalysisUtils;
 
 
 /**
@@ -102,7 +101,7 @@ public class MyInfoView {
 
     public void setLoginParams(boolean isLogin) {
         if(isLogin){
-            tv_user_name.setText(AnalysitUtils.readLoginUserName(mContext));
+            tv_user_name.setText(AnalysisUtils.readLoginUserName(mContext));
         }else{
             tv_user_name.setText("点击登录");
         }

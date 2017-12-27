@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import cn.edu.gdmec.android.boxuegu.R;
-import cn.edu.gdmec.android.boxuegu.utils.AnalysitUtils;
+import cn.edu.gdmec.android.boxuegu.utils.AnalysisUtils;
 import cn.edu.gdmec.android.boxuegu.utils.MD5Utils;
 
 public class ModifyPwdActivity extends AppCompatActivity {
@@ -31,7 +31,7 @@ public class ModifyPwdActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modify_pwd);
-        userName = AnalysitUtils.readLoginUserName(this);
+        userName = AnalysisUtils.readLoginUserName(this);
         init();
     }
     private void init() {
