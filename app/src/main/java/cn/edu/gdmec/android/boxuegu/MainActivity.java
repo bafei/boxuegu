@@ -15,10 +15,24 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import cn.edu.gdmec.android.boxuegu.activity.UserInfoActivity;
+import cn.edu.gdmec.android.boxuegu.View.MyInfoView;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(data !=null){
+            boolean isLogin = data.getBooleanExtra("isLogin", false);
+            if(isLogin){ //登录成功后显示课程界面
+                clearBottomImageState();
+                selectDisplayView(0);
+            }
+            if(mMyInfoView !=null){
+                mMyInfoView.setLoginParams(isLogin);
+            }
+        }
+    }
 
     private TextView tv_back;
     private RelativeLayout rl_title_bar;
@@ -141,6 +155,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+    private MyInfoView mMyInfoView;
     /*
     * 选择视图
     * */
@@ -154,6 +169,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 2:
                 //我的界面
+                if(mMyInfoView == null){
+                    mMyInfoView = new MyInfoView(this);
+                    mBodyLayout.addView(mMyInfoView.getView());
+                }else{
+                    mMyInfoView.getView();
+                }
+                mMyInfoView.showView();
                 break;
         }
     }

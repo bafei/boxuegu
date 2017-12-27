@@ -48,6 +48,12 @@ public class LoginActivity extends AppCompatActivity {
                 LoginActivity.this.finish();
             }
         });
+        tv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoginActivity.this.finish();
+            }
+        });
         //立即注册点击事件
         tv_register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,9 +93,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent data = new Intent();
                     data.putExtra("isLogin",true);
                     setResult(RESULT_OK,data);
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    LoginActivity.this.finish();
+                    LoginActivity.this.finish();//跳转到主页
                     return;
                 }else if(!TextUtils.isEmpty(spPwd)&&!spPwd.equals(md5Pwd)){
                     Toast.makeText(LoginActivity.this, "用户名于密码不一致", Toast.LENGTH_SHORT).show();
