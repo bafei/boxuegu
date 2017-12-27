@@ -16,6 +16,7 @@ import android.widget.TwoLineListItem;
 import cn.edu.gdmec.android.boxuegu.R;
 import cn.edu.gdmec.android.boxuegu.activity.LoginActivity;
 import cn.edu.gdmec.android.boxuegu.activity.SettingActivity;
+import cn.edu.gdmec.android.boxuegu.activity.UserInfoActivity;
 import cn.edu.gdmec.android.boxuegu.utils.AnalysitUtils;
 
 
@@ -65,7 +66,9 @@ public class MyInfoView {
                 //判断是否已经登录
                 if(readLoginStatus()){
                     //跳转到个人资料界面
-                    Toast.makeText(mContext, "显示个人资料界面", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(mContext, "显示个人资料界面", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(mContext, UserInfoActivity.class);
+                    ((Activity) mContext).startActivityForResult(intent,1);
                 }else{
                     Intent intent = new Intent(mContext, LoginActivity.class);
                     ((Activity) mContext).startActivityForResult(intent,1);
