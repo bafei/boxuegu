@@ -22,10 +22,11 @@ public class LoginActivity extends AppCompatActivity {
     private String pwd;
     private String md5Pwd;
     private String spPwd;
-    private TextView tv_register;
-    private TextView tv_find_pwd;
+    private TextView tv_register;  //立即注册
+    private TextView tv_find_pwd;  //找回密码
     private Button btn_login;
     private TextView tv_main_title;
+    private TextView tvBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {//sdf
@@ -36,19 +37,13 @@ public class LoginActivity extends AppCompatActivity {
     private void init(){
         tv_main_title = (TextView) findViewById(R.id.tv_main_title);
         tv_main_title.setText("登录");
-        TextView tv_back = (TextView)findViewById(R.id.tv_back);
+        tvBack = (TextView)findViewById(R.id.tv_back);
         et_user_name =(EditText) findViewById(R.id.et_user_name);
         et_pwd  = (EditText) findViewById(R.id.et_pwd);
         tv_register = (TextView) findViewById(R.id.tv_register);
         tv_find_pwd = (TextView) findViewById(R.id.tv_find_pwd);
         btn_login = (Button) findViewById(R.id.btn_login);
-        btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                LoginActivity.this.finish();
-            }
-        });
-        tv_back.setOnClickListener(new View.OnClickListener() {
+        tvBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 LoginActivity.this.finish();
