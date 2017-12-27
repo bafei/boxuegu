@@ -13,6 +13,7 @@ import android.widget.Toast;
 import cn.edu.gdmec.android.boxuegu.R;
 
 public class SettingActivity extends AppCompatActivity {
+    public static SettingActivity instance; //用来远程关闭
     private TextView tv_main_title;
     private TextView tv_back;
     private RelativeLayout rl_title_bar;
@@ -24,6 +25,7 @@ public class SettingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+        instance = this; //用来远程关闭
         init();
     }
 
@@ -46,13 +48,15 @@ public class SettingActivity extends AppCompatActivity {
         rl_modiy_pwd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO:修改密码
+                //Toast.makeText(SettingActivity.this, "lll", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SettingActivity.this,ModifyPwdActivity.class);
+                startActivity(intent);
             }
         });
         rl_security_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //密保
+                //TODO:密保
             }
         });
         rl_exit_login.setOnClickListener(new View.OnClickListener() {
