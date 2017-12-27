@@ -11,8 +11,11 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.TwoLineListItem;
+
 import cn.edu.gdmec.android.boxuegu.R;
 import cn.edu.gdmec.android.boxuegu.activity.LoginActivity;
+import cn.edu.gdmec.android.boxuegu.activity.SettingActivity;
 import cn.edu.gdmec.android.boxuegu.utils.AnalysitUtils;
 
 
@@ -85,7 +88,8 @@ public class MyInfoView {
             public void onClick(View view) {
                 if(readLoginStatus()){
                     //跳转到设置页面
-                    Toast.makeText(mContext, "显示设置界面", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(mContext, SettingActivity.class);
+                    ((Activity) mContext).startActivityForResult(intent,1);
                 }else{
                     Toast.makeText(mContext, "您还未登录请先登录", Toast.LENGTH_SHORT).show();
                 }
