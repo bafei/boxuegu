@@ -1,5 +1,6 @@
 package cn.edu.gdmec.android.boxuegu;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.provider.Settings;
@@ -13,6 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import cn.edu.gdmec.android.boxuegu.activity.UserInfoActivity;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
