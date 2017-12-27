@@ -11,8 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import cn.edu.gdmec.android.boxuegu.R;
-///import cn.edu.gdmec.android.boxuegu.bean.Userbean;
-//import cn.edu.gdmec.android.boxuegu.utils.DBUtils;
+import cn.edu.gdmec.android.boxuegu.bean.Userbean;
+import cn.edu.gdmec.android.boxuegu.utils.DBUtils;
 
 public class UserInfoActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -48,7 +48,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void initDate() {
-        /*Userbean bean = null;
+        Userbean bean = null;
         bean = DBUtils.getInstanse(this).getUserInfo(spUserName);
         if(bean == null){
             bean =  new Userbean();
@@ -61,15 +61,15 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
 
         }
         setValue(bean);
-*/
+
     }
 
-/*    private void setValue(Userbean bean) {
+   private void setValue(Userbean bean) {
         tv_nivkName.setText(bean.nickName);
         tv_user_name.setText(bean.userName);
         tv_sex.setText(bean.sex);
         tv_signature.setText(bean.signature);
-    }*/
+    }
 
 
     private void init() {
@@ -115,7 +115,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     }
 //设置性别的弹出框
     private void sexDialog(String sex) {
-        /*int sexFlag = 0;
+        int sexFlag = 0;
         if("男".equals(sex)){
             sexFlag =0;
         }else if ("女".equals(sex)){
@@ -135,16 +135,16 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
 
 
         });
-        builder.show();*/
+        builder.show();
 
 
     }
     //更新界面上的性别数据
 
     private void setSex(String sex) {
-       /* tv_sex.setText(sex);
+        tv_sex.setText(sex);
         //更新数据库中字段
         DBUtils.getInstanse(this).updateUserInfo("sex",sex,spUserName);
-        */
+
     }
 }
