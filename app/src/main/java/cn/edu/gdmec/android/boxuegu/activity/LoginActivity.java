@@ -66,7 +66,8 @@ public class LoginActivity extends AppCompatActivity {
         tv_find_pwd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(LoginActivity.this, "暂未处理", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LoginActivity.this,FindPwdActivity.class);
+                startActivity(intent);
             }
         });
         //登录按钮点击事件

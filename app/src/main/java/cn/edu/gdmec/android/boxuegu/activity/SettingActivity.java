@@ -56,7 +56,10 @@ public class SettingActivity extends AppCompatActivity {
         rl_security_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO:密保
+                //:密保
+                Intent intent = new Intent(SettingActivity.this,FindPwdActivity.class);
+                intent.putExtra("from","security");
+                startActivity(intent);
             }
         });
         rl_exit_login.setOnClickListener(new View.OnClickListener() {
