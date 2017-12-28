@@ -23,7 +23,8 @@
         <activity android:name=".activity.ChangeUserInfoActivity" />
         <activity android:name=".activity.SettingActivity" />
         <activity android:name=".activity.ModifyPwdActivity" />
-        <activity android:name=".activity.FindPwdActivity"></activity>
+        <activity android:name=".activity.FindPwdActivity" />
+        <activity android:name=".activity.ExercisesDetailActivity"></activity>
     </application>
 
 </manifest>
