@@ -1,4 +1,4 @@
-package cn.edu.gdmec.android.boxuegu.View;
+package cn.edu.gdmec.android.boxuegu.view;
 
 import android.app.Activity;
 import android.content.Context;
