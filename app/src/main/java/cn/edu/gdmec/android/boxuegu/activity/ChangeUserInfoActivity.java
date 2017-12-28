@@ -78,7 +78,7 @@ public class ChangeUserInfoActivity extends AppCompatActivity {
                 switch (flag){
                     case 1:
                         if (!TextUtils.isEmpty(etContent)){
-                            data.putExtra("nickName",data);
+                            data.putExtra("nickName",etContent);
                             setResult(RESULT_OK,data);
                             Toast.makeText(ChangeUserInfoActivity.this,"保存成功",Toast.LENGTH_SHORT).show();
                             ChangeUserInfoActivity.this.finish();
@@ -88,7 +88,7 @@ public class ChangeUserInfoActivity extends AppCompatActivity {
                         break;
                     case 2:
                         if (!TextUtils.isEmpty(etContent)){
-                            data.putExtra("signature",data);
+                            data.putExtra("signature",etContent);
                             setResult(RESULT_OK,data);
                             Toast.makeText(ChangeUserInfoActivity.this,"保存成功",Toast.LENGTH_SHORT).show();
                             ChangeUserInfoActivity.this.finish();

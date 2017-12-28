@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import cn.edu.gdmec.android.boxuegu.R;
-import cn.edu.gdmec.android.boxuegu.utils.AnalysitUtils;
+import cn.edu.gdmec.android.boxuegu.utils.AnalysisUtils;
 import cn.edu.gdmec.android.boxuegu.utils.MD5Utils;
 
 public class FindPwdActivity extends AppCompatActivity {
@@ -120,9 +120,9 @@ public class FindPwdActivity extends AppCompatActivity {
     }
 
     private void saveSecurity(String validateName) {
-        SharedPreferences sp = getSharedPreferences("loginInfo", MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("loginInfo123", MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
-        editor.putString(AnalysitUtils.readLoginUserName(this)+"_security",validateName);
+        editor.putString(AnalysisUtils.readLoginUserName(this)+"_security",validateName);
         editor.commit();
     }
 }
