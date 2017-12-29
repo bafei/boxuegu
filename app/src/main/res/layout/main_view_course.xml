@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white">
-    <include layout="@layout/main_advbanner"/>
+    <include layout="@layout/main_adbanner"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="45dp">
@@ -31,6 +31,7 @@
         android:layout_marginRight="8dp"
         android:background="#E4E4E4"/>
     <ListView
+        android:id="@+id/rl_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="55dp"
