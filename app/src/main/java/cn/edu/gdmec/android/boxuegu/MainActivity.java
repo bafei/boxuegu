@@ -15,6 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import cn.edu.gdmec.android.boxuegu.view.CourseView;
 import cn.edu.gdmec.android.boxuegu.view.ExerciseView;
 import cn.edu.gdmec.android.boxuegu.view.MyInfoView;
 
@@ -129,7 +130,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setSelectedStatus(int index) {
         switch (index){
             case 0:
-                //TODO：课程界面
                 mCourseBtn.setSelected(true);
                 iv_course.setImageResource(R.drawable.main_course_icon_selected);
                 tv_course.setTextColor(Color.parseColor("#0097f7"));
@@ -154,11 +154,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     private ExerciseView mExercisesView;
     private MyInfoView mMyInfoView;
+    private CourseView mCourseView;
     //选择视图
     private void createView(int viewindex) {
         switch (viewindex){
             case 0:
-                //课程部分
+                //TODO：课程界面
+                if (mCourseView == null){
+                    mCourseView = new CourseView(this);
+                    mBodyLayout.addView(mCourseView.getView());
+                }else{
+                    mCourseView.getView();
+                }
+                mCourseView.showView();
                 break;
             case 1:
                 if (mExercisesView == null){
