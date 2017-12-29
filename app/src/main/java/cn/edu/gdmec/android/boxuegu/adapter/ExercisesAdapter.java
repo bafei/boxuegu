@@ -15,6 +15,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import cn.edu.gdmec.android.boxuegu.R;
+import cn.edu.gdmec.android.boxuegu.activity.ExercisesDetailActivity;
 import cn.edu.gdmec.android.boxuegu.bean.ExercisesBean;
 
 /**
@@ -80,7 +81,7 @@ public class ExercisesAdapter extends BaseAdapter {
                     return;
                 }
                 //跳转到详情页
-                Intent intent = new Intent(mContext, ExercisesDetailAdapter.class);
+                Intent intent = new Intent(mContext, ExercisesDetailActivity.class);
                 intent.putExtra("id",bean.id);
                 intent.putExtra("title",bean.title);
                 mContext.startActivity(intent);
