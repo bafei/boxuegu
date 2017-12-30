@@ -77,7 +77,7 @@ public class VideoListAdapter extends BaseAdapter {
             vh = new ViewHolder();
             convertView = LayoutInflater.from(mContext).inflate(R.layout.video_list_item, null);
             vh.tv_title = convertView.findViewById(R.id.tv_video_title);
-            vh.iv_icon = convertView.findViewById(R.id.iv_left_icon);
+            vh.iv_icon = (ImageView) convertView.findViewById(R.id.iv_left_icon);
             convertView.setTag(vh);
         }else{
             vh = ((ViewHolder) convertView.getTag());
@@ -101,9 +101,9 @@ public class VideoListAdapter extends BaseAdapter {
             public void onClick(View view) {
                 if(bean == null){
                     return;
-                    //播放视频
-                    onSelectLister.onSelect(position,vh.iv_icon);
                 }
+                //播放视频
+                onSelectLister.onSelect(position , vh.iv_icon);
             }
         });
         return convertView;
