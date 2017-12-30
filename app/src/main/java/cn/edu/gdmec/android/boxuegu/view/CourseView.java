@@ -77,13 +77,13 @@ public class CourseView{
             bean.id = (i+1);
             switch (i){
                 case 0:
-                    bean.icon = "bean_1";
+                    bean.icon = "banner_1";
                     break;
                 case 1:
-                    bean.icon = "bean_2";
+                    bean.icon = "banner_2";
                     break;
                 case 2:
-                    bean.icon = "bean_3";
+                    bean.icon = "banner_3";
                     break;
                 default:
                     break;

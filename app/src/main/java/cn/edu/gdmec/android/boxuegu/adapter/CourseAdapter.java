@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -68,7 +69,8 @@ public class CourseAdapter extends BaseAdapter{
         List<CourseBean> list = (List<CourseBean>) getItem(position);
         if(list !=null){
             for(int i=0;i<list.size();i++){
-                CourseBean bean = new CourseBean();
+                //CourseBean bean = new CourseBean();
+                CourseBean bean = list.get(i);
                 switch (i){
                     case 0: //左边
                         vh.tv_left_img_title.setText(bean.imgTitle);
@@ -78,6 +80,7 @@ public class CourseAdapter extends BaseAdapter{
                             @Override
                             public void onClick(View view) {
                                 //TODO:跳转到课程详情界面
+                                Toast.makeText(context, "跳转到课程详情界面", Toast.LENGTH_SHORT).show();
                             }
                         });
                         break;
@@ -89,6 +92,7 @@ public class CourseAdapter extends BaseAdapter{
                             @Override
                             public void onClick(View view) {
                                 //TODO:跳转到课程详情界面
+                                Toast.makeText(context, "跳转到课程详情界面", Toast.LENGTH_SHORT).show();
                             }
                         });
                         break;
