@@ -1,6 +1,7 @@
 package cn.edu.gdmec.android.boxuegu.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import cn.edu.gdmec.android.boxuegu.R;
+import cn.edu.gdmec.android.boxuegu.activity.VideoListActivity;
 import cn.edu.gdmec.android.boxuegu.bean.CourseBean;
 
 /**
@@ -19,11 +21,11 @@ import cn.edu.gdmec.android.boxuegu.bean.CourseBean;
  */
 
 public class CourseAdapter extends BaseAdapter{
-    private Context context;
+    private Context mContext;
     private List<List<CourseBean>> cbl;
 
     public CourseAdapter(Context context) {
-        this.context = context;
+        this.mContext = context;
     }
     /*
     * 设置数据，更新界面
@@ -52,7 +54,7 @@ public class CourseAdapter extends BaseAdapter{
         ViewHolder vh;
         if(convertView == null){
             vh = new ViewHolder();
-            convertView = LayoutInflater.from(context).inflate(R.layout.course_list_item,null);
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.course_list_item,null);
             vh.iv_left_img = convertView.findViewById(R.id.iv_left_img);
             vh.iv_right_img = convertView.findViewById(R.id.iv_right_img);
 
@@ -70,7 +72,7 @@ public class CourseAdapter extends BaseAdapter{
         if(list !=null){
             for(int i=0;i<list.size();i++){
                 //CourseBean bean = new CourseBean();
-                CourseBean bean = list.get(i);
+                final CourseBean bean = list.get(i);
                 switch (i){
                     case 0: //左边
                         vh.tv_left_img_title.setText(bean.imgTitle);
@@ -79,8 +81,11 @@ public class CourseAdapter extends BaseAdapter{
                         vh.iv_left_img.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                //TODO:跳转到课程详情界面
-                                Toast.makeText(context, "跳转到课程详情界面", Toast.LENGTH_SHORT).show();
+                                //跳转到课程详情界面
+                                Intent intent = new Intent(mContext,VideoListActivity.class);
+                                intent.putExtra("id",bean.id);
+                                intent.putExtra("intro",bean.intro);
+                                mContext.startActivity(intent);
                             }
                         });
                         break;
@@ -91,8 +96,11 @@ public class CourseAdapter extends BaseAdapter{
                         vh.iv_right_img.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                //TODO:跳转到课程详情界面
-                                Toast.makeText(context, "跳转到课程详情界面", Toast.LENGTH_SHORT).show();
+                                //跳转到课程详情界面
+                                Intent intent = new Intent(mContext,VideoListActivity.class);
+                                intent.putExtra("id",bean.id);
+                                intent.putExtra("intro",bean.intro);
+                                mContext.startActivity(intent);
                             }
                         });
                         break;

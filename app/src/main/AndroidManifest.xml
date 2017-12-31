@@ -24,7 +24,9 @@
         <activity android:name=".activity.SettingActivity" />
         <activity android:name=".activity.ModifyPwdActivity" />
         <activity android:name=".activity.FindPwdActivity" />
-        <activity android:name=".activity.ExercisesDetailActivity"></activity>
+        <activity android:name=".activity.ExercisesDetailActivity" />
+        <activity android:name=".activity.VideoListActivity" />
+        <activity android:name=".activity.VideoPlayActivity"></activity>
     </application>
 
 </manifest>
