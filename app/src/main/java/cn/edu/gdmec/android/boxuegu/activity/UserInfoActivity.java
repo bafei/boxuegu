@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import cn.edu.gdmec.android.boxuegu.R;
-import cn.edu.gdmec.android.boxuegu.bean.Userbean;
+import cn.edu.gdmec.android.boxuegu.bean.UserBean;
 import cn.edu.gdmec.android.boxuegu.utils.AnalysisUtils;
 import cn.edu.gdmec.android.boxuegu.utils.DBUtils;
 
@@ -63,10 +63,10 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void initDate() {
-        Userbean bean = null;
+        UserBean bean = null;
         bean = DBUtils.getInstanse(this).getUserInfo(spUserName);
         if(bean == null){
-            bean =  new Userbean();
+            bean =  new UserBean();
             bean.userName = spUserName;
             bean.nickName = "问答精灵";
             bean.sex = "男";
@@ -79,7 +79,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
-   private void setValue(Userbean bean) {
+   private void setValue(UserBean bean) {
         tv_nivkName.setText(bean.nickName);
         tv_user_name.setText(bean.userName);
         tv_sex.setText(bean.sex);
