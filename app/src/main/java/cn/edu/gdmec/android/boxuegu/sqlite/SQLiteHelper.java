@@ -38,7 +38,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             +"chapterId INT"  //章节ID号
             +"videoId INT,"  //小节ID
             +"videoPath VARCHAR,"  //视频地址
-            +"title VARCHAR,"  //视频章节名称
+            +"title VARCHAR,"  //视频的章节名称
             +"secondTitle VARCHAR,"  //视频名称
             +")"
         );
