@@ -117,8 +117,8 @@ public class VideoListActivity extends AppCompatActivity implements View.OnClick
                 tv_video.setTextColor(Color.parseColor("#000000"));
                 break;
             case R.id.tv_video:   //视频
-                lv_video_list.setVisibility(View.GONE);
-                sv_chapter_intro.setVisibility(View.VISIBLE);
+                lv_video_list.setVisibility(View.VISIBLE);
+                sv_chapter_intro.setVisibility(View.GONE);
                 tv_intro.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 tv_video.setBackgroundColor(Color.parseColor("#30B4FF"));
                 tv_intro.setTextColor(Color.parseColor("#000000"));
