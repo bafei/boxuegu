@@ -53,7 +53,7 @@ public class VideoListActivity extends AppCompatActivity implements View.OnClick
         //从课程界面传递过来的章节简介
         intro = getIntent().getStringExtra("intro");
         //创建数据库工具类的对象
-        db = DBUtils.getInstanse(VideoListActivity.this);
+        db = DBUtils.getInstance(VideoListActivity.this);
         initData();
         init();
     }
@@ -78,16 +78,16 @@ public class VideoListActivity extends AppCompatActivity implements View.OnClick
                     Toast.makeText(VideoListActivity.this, "本地没有此视频，暂无法播放", Toast.LENGTH_SHORT).show();
                     return;
                 } else {
-                    //判断是否登录，若登录则把此视频添加到数据库
-                    if (readLoginStatus()) {
+                    //判断用户是否登陆，若登陆则把此视频添加到数据库
+                    if (readLoginStatus()){
                         String userName = AnalysisUtils.readLoginUserName(VideoListActivity.this);
-                        db.saveVideoPlayList(videoList.get(position), userName);
+                        db.saveVideoList(videoList.get(position),userName);
                     }
                     //跳转到视频播放界面
-                    Intent intent = new Intent(VideoListActivity.this, VideoPlayActivity.class);
-                    intent.putExtra("videoPath", videoPath);
-                    intent.putExtra("position", position);
-                    startActivityForResult(intent, 1);
+                    Intent intent = new Intent(VideoListActivity.this,VideoPlayActivity.class);
+                    intent.putExtra("videoPath",videoPath);
+                    intent.putExtra("position",position);
+                    startActivityForResult(intent,1);
                 }
             }
         });

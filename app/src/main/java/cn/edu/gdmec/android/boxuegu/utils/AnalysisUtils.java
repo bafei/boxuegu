@@ -13,24 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.edu.gdmec.android.boxuegu.bean.ExercisesBean;
-
-/**
- * Created by student on 17/12/27.
- */
-
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.util.Xml;
-import android.widget.ImageView;
-
-import org.xmlpull.v1.XmlPullParser;
-
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-
 import cn.edu.gdmec.android.boxuegu.bean.CourseBean;
-import cn.edu.gdmec.android.boxuegu.bean.ExercisesBean;
+
 
 /**
  * Created by student on 17/12/26.

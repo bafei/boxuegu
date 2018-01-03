@@ -64,7 +64,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
 
     private void initDate() {
         UserBean bean = null;
-        bean = DBUtils.getInstanse(this).getUserInfo(spUserName);
+        bean = DBUtils.getInstance(this).getUserInfo(spUserName);
         if(bean == null){
             bean =  new UserBean();
             bean.userName = spUserName;
@@ -72,7 +72,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
             bean.sex = "男";
             bean.signature = "问答精灵";
             //保存
-            DBUtils.getInstanse(this).saveUserInfo(bean);
+            DBUtils.getInstance(this).saveUserInfo(bean);
 
         }
         setValue(bean);
@@ -157,7 +157,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                     }
                     tv_nivkName.setText(new_info);
                     //更新数据库中昵称字段
-                    DBUtils.getInstanse(UserInfoActivity.this).updateUserInfo("nickName", new_info, spUserName);
+                    DBUtils.getInstance(UserInfoActivity.this).updateUserInfo("nickName", new_info, spUserName);
 
                 }
                 break;
@@ -169,7 +169,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                     }
                     tv_signature.setText(new_info);
                     //更新数据库中签名字段
-                    DBUtils.getInstanse(UserInfoActivity.this).updateUserInfo("signature", new_info, spUserName);
+                    DBUtils.getInstance(UserInfoActivity.this).updateUserInfo("signature", new_info, spUserName);
 
                 }
                 break;
@@ -209,7 +209,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     private void setSex(String sex) {
         tv_sex.setText(sex);
         //更新数据库中字段
-        DBUtils.getInstanse(this).updateUserInfo("sex",sex,spUserName);
+        DBUtils.getInstance(this).updateUserInfo("sex",sex,spUserName);
 
     }
 }
