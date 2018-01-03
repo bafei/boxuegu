@@ -1,8 +1,10 @@
 package cn.edu.gdmec.android.boxuegu.activity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Environment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +18,7 @@ import cn.edu.gdmec.android.boxuegu.R;
 import cn.edu.gdmec.android.boxuegu.bean.UserBean;
 import cn.edu.gdmec.android.boxuegu.utils.AnalysisUtils;
 import cn.edu.gdmec.android.boxuegu.utils.DBUtils;
+import cn.edu.gdmec.android.boxuegu.utils.ImageUtils;
 
 public class UserInfoActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -27,15 +30,19 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     private RelativeLayout rl_nickName;
     private TextView tv_nivkName;
     private RelativeLayout rl_sex;
+    private RelativeLayout rl_head;
     private TextView tv_sex;
     private RelativeLayout rl_signature;
     private TextView tv_signature;
     private String spUserName ;
+    private Context context;
 
 
     private  static final  int CHANGE_NICKNAME = 1;
     private  static final  int CHANGE_SIGNATURE = 2;
+    private static final int CHANGE_IMG_ICON = 3;
     private String new_info;
+    private ImageUtils imageUtils;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +66,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         rl_nickName.setOnClickListener(this);
         rl_sex.setOnClickListener(this);
         rl_signature.setOnClickListener(this);
+        rl_head.setOnClickListener(this);
 
     }
 
@@ -106,6 +114,8 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         rl_signature = (RelativeLayout) findViewById(R.id.rl_signature);
         tv_signature = (TextView) findViewById(R.id.tv_signature);
 
+        rl_head = (RelativeLayout) findViewById(R.id.rl_head);
+
     }
 
 
@@ -137,6 +147,9 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 bdsignature.putString("title","签名");
                 bdsignature.putInt("flag",2); //表示2是修改签名
                 enterACtivityForResurlt(ChangeUserInfoActivity.class,CHANGE_SIGNATURE,bdsignature);
+                break;
+            case R.id.rl_head://头像点击事件
+                chooseDialog();
                 break;
             default:
                 break;
@@ -172,6 +185,9 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                     DBUtils.getInstance(UserInfoActivity.this).updateUserInfo("signature", new_info, spUserName);
 
                 }
+                break;
+            case CHANGE_IMG_ICON:
+
                 break;
             default:
                 break;
@@ -210,6 +226,32 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         tv_sex.setText(sex);
         //更新数据库中字段
         DBUtils.getInstance(this).updateUserInfo("sex",sex,spUserName);
+
+    }
+    //修改头像提示框
+    private void chooseDialog() {
+        imageUtils = new ImageUtils(this);
+        new AlertDialog.Builder(this)//
+                .setTitle("选择头像")//
+
+                .setNegativeButton("相册", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        imageUtils.byAlbum();
+                    }
+                })
+
+                .setPositiveButton("拍照", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        String status = Environment.getExternalStorageState();
+                        if (status.equals(Environment.MEDIA_MOUNTED)) {//判断是否存在SD卡
+                            imageUtils.byCamera();
+                        }
+                    }
+                }).show();
 
     }
 }
