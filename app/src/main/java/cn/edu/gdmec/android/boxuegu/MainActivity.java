@@ -16,7 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import cn.edu.gdmec.android.boxuegu.view.CourseView;
-import cn.edu.gdmec.android.boxuegu.view.ExerciseView;
+import cn.edu.gdmec.android.boxuegu.view.ExercisesView;
 import cn.edu.gdmec.android.boxuegu.view.MyInfoView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
-    private ExerciseView mExercisesView;
+    private ExercisesView mExercisesView;
     private MyInfoView mMyInfoView;
     private CourseView mCourseView;
     //选择视图
@@ -170,7 +170,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 1:
                 if (mExercisesView == null){
-                    mExercisesView = new ExerciseView(this);
+                    mExercisesView = new ExercisesView(this);
                     mBodyLayout.addView(mExercisesView.getView());
                 }else{
                     mExercisesView.getView();
