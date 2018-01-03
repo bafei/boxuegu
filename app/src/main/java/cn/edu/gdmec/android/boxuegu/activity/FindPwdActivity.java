@@ -79,7 +79,7 @@ public class FindPwdActivity extends AppCompatActivity {
                     }else if(TextUtils.isEmpty(validateName)){
                         Toast.makeText(FindPwdActivity.this, "请输入密保名字", Toast.LENGTH_SHORT).show();
                         return;
-                    }else if(!validateName.equals(sp_security)){
+                    }else if(!sp_security.equals(validateName)){
                         Toast.makeText(FindPwdActivity.this, "密保不正确", Toast.LENGTH_SHORT).show();
                         return;
                     }else{
@@ -114,7 +114,7 @@ public class FindPwdActivity extends AppCompatActivity {
     }
 
     private String readSecurity(String userName) {
-        SharedPreferences sp = getSharedPreferences("loginInfo", MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("loginInfo123", MODE_PRIVATE);
         String security = sp.getString(userName + "_security", "");
         return security;
     }
