@@ -32,16 +32,15 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
         );
         //创建视频播放记录表
-        db.execSQL("CREATE TABLE IF NOT EXISTS " + U_VIDEO_PLAY_LIST+"("
-            +"_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-            +"userName VARCHAR,"  //用户名
-            +"chapterId INT"  //章节ID号
-            +"videoId INT,"  //小节ID
-            +"videoPath VARCHAR,"  //视频地址
-            +"title VARCHAR,"  //视频的章节名称
-            +"secondTitle VARCHAR,"  //视频名称
-            +")"
-        );
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + U_VIDEO_PLAY_LIST + "( "
+                + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "userName VARCHAR, "
+                + "chapterId Int, "
+                +  "videoId VARCHAR, "
+                + "videoPath VARCHAR, "
+                + "title VARCHAR, "
+                + "secondTitle VARCHAR "
+                + ")" );
     }
     //数据库升级 数据库版本号增加 升级会调用此方法
     @Override
