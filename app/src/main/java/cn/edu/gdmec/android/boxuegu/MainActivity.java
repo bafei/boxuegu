@@ -77,16 +77,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBottomLayout = (LinearLayout) findViewById(R.id.main_bottom_bar);
 
         mCourseBtn = (RelativeLayout) findViewById(R.id.bottom_bar_course_btn);
-        mExercisesBtn = (RelativeLayout) findViewById(R.id.bottom_bar_exercise_btn);
-        mMyInfoBtn = (RelativeLayout) findViewById(R.id.bottom_bar_myInfo_btn);
+        mExercisesBtn = (RelativeLayout) findViewById(R.id.bottom_bar_exercises_btn);
+        mMyInfoBtn = (RelativeLayout) findViewById(R.id.bottom_bar_myinfo_btn);
 
         tv_course = (TextView) findViewById(R.id.bottom_bar_text_course);
         tv_exercises = (TextView) findViewById(R.id.bottom_bar_text_exercises);
-        tv_myInfo = (TextView) findViewById(R.id.bottom_bar_text_myInfo);
+        tv_myInfo = (TextView) findViewById(R.id.bottom_bar_text_myinfo);
 
         iv_course = (ImageView)findViewById(R.id.bottom_bar_image_course);
         iv_exercises = (ImageView)findViewById(R.id.bottom_bar_image_exercises);
-        iv_myInfo = (ImageView)findViewById(R.id.bottom_bar_image_myInfo);
+        iv_myInfo = (ImageView)findViewById(R.id.bottom_bar_image_myinfo);
     }
 
     private void init() {
@@ -110,11 +110,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 clearBottomImageState();
                 selectDisplayView(0);
                 break;
-            case R.id.bottom_bar_exercise_btn:
+            case R.id.bottom_bar_exercises_btn:
                 clearBottomImageState();
                 selectDisplayView(1);
                 break;
-            case R.id.bottom_bar_myInfo_btn:
+            case R.id.bottom_bar_myinfo_btn:
                 clearBottomImageState();
                 selectDisplayView(2);
                 break;

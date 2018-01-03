@@ -154,7 +154,7 @@ public class CourseView{
         return displayMetrics.widthPixels;
     }
 
-    private class MHandler extends Handler{
+    class MHandler extends Handler{
         @Override
         public void dispatchMessage(Message msg) {
             super.dispatchMessage(msg);

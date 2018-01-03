@@ -46,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
         btn_register = (Button) findViewById(R.id.btn_register);
         et_user_name = (EditText) findViewById(R.id.et_user_name);
         et_pwd = (EditText) findViewById(R.id.et_pwd);
-        et_pwd_again = (EditText) findViewById(R.id.tv_pwd_again);
+        et_pwd_again = (EditText) findViewById(R.id.et_pwd_again);
         tv_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
